@@ -422,6 +422,17 @@ if __name__ == "__main__":
             except ValueError:
                 print("请输入有效的邮箱")
 
+        
+        # 获取当前日期 超过指定上限则退出程序
+        current_date = datetime.now()
+        # 将目标日期字符串转换为datetime对象 "2024-03-31"
+        end_date = datetime.strptime("2025-04-30", '%Y-%m-%d')
+        
+        if current_date > end_date:
+            print("已超过上限")
+            # exit()
+            sys.exit()
+
 
         # 提示用户选择操作模式
         # print("\n请选择操作模式:")
