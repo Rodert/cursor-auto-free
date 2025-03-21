@@ -10,7 +10,11 @@ a = Analysis(
         ('cursor_auth_manager.py', '.'),
     ],
     hiddenimports=[
-        'cursor_auth_manager'
+        'cursor_auth_manager',
+        'colorama',
+        'colorama.ansi',
+        'colorama.win32',
+        'colorama.winterm'
     ],
     hookspath=[],
     hooksconfig={},

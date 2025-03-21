@@ -103,7 +103,7 @@ class MachineIDResetter:
             with open(self.db_path, "w", encoding="utf-8") as f:
                 json.dump(config, f, indent=4)
 
-            print(f"{Fore.GREEN}{EMOJI['SUCCESS']} 机器标识重置成功！{Style.RESET_ALL}")
+            # print(f"{Fore.GREEN}{EMOJI['SUCCESS']} 机器标识重置成功！{Style.RESET_ALL}")
             print(f"\n{Fore.CYAN}新的机器标识:{Style.RESET_ALL}")
             for key, value in new_ids.items():
                 print(f"{EMOJI['INFO']} {key}: {Fore.GREEN}{value}{Style.RESET_ALL}")

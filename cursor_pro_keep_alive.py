@@ -446,7 +446,7 @@ if __name__ == "__main__":
         if choice == 1:
             # 仅执行重置机器码
             reset_machine_id(greater_than_0_45)
-            logging.info("机器码重置完成")
+            # logging.info("机器码重置完成")
             print_end_message()
             sys.exit(0)
 
