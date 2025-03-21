@@ -12,8 +12,8 @@ class PrefixFormatter(logging.Formatter):
     """自定义格式化器，为 DEBUG 级别日志添加开源项目前缀"""
 
     def format(self, record):
-        if record.levelno == logging.DEBUG:  # 只给 DEBUG 级别添加前缀
-            record.msg = f"[开源项目：https://github.com/chengazhen/cursor-auto-free] {record.msg}"
+        # if record.levelno == logging.DEBUG:  # 只给 DEBUG 级别添加前缀
+        #     record.msg = f"[开源项目：https://github.com/chengazhen/cursor-auto-free] {record.msg}"
         return super().format(record)
 
 

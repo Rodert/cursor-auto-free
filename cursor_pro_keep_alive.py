@@ -150,9 +150,9 @@ def handle_turnstile(tab, max_retries: int = 2, retry_interval: tuple = (1, 2)) 
 
         # 超出最大重试次数
         logging.error(f"验证失败 - 已达到最大重试次数 {max_retries}")
-        logging.error(
-            "请前往开源项目查看更多信息：https://github.com/chengazhen/cursor-auto-free"
-        )
+        # logging.error(
+        #     "请前往开源项目查看更多信息：https://github.com/chengazhen/cursor-auto-free"
+        # )
         save_screenshot(tab, "failed")
         return False
 
@@ -302,9 +302,9 @@ def sign_up_account(browser, tab):
             usage_info = usage_ele.text
             total_usage = usage_info.split("/")[-1].strip()
             logging.info(f"账户可用额度上限: {total_usage}")
-            logging.info(
-                "请前往开源项目查看更多信息：https://github.com/chengazhen/cursor-auto-free"
-            )
+            # logging.info(
+            #     "请前往开源项目查看更多信息：https://github.com/chengazhen/cursor-auto-free"
+            # )
     except Exception as e:
         logging.error(f"获取账户额度信息失败: {str(e)}")
 
@@ -391,13 +391,13 @@ def print_end_message():
     logging.info("\n\n\n\n\n")
     logging.info("=" * 30)
     logging.info("所有操作已完成")
-    logging.info("\n=== 获取更多信息 ===")
-    logging.info("📺 B站UP主: 想回家的前端")
-    logging.info("🔥 公众号: code 未来")
+    # logging.info("\n=== 获取更多信息 ===")
+    # logging.info("📺 B站UP主: 想回家的前端")
+    # logging.info("🔥 公众号: code 未来")
     logging.info("=" * 30)
-    logging.info(
-        "请前往开源项目查看更多信息：https://github.com/chengazhen/cursor-auto-free"
-    )
+    # logging.info(
+    #     "请前往开源项目查看更多信息：https://github.com/chengazhen/cursor-auto-free"
+    # )
 
 
 if __name__ == "__main__":
@@ -408,20 +408,40 @@ if __name__ == "__main__":
         logging.info("\n=== 初始化程序 ===")
         ExitCursor()
 
-        # 提示用户选择操作模式
-        print("\n请选择操作模式:")
-        print("1. 仅重置机器码")
-        print("2. 完整注册流程")
-
+        # 业务代码
+        print("\n请输入你的邮箱:")
+        email = '123456@qq.com'
         while True:
             try:
-                choice = int(input("请输入选项 (1 或 2): ").strip())
-                if choice in [1, 2]:
+                # choice = int(input("请输入选项 (1 或 2): ").strip())
+                choice = str(input("请输入你的邮箱: ").strip())
+                if choice in [email]:
                     break
                 else:
                     print("无效的选项,请重新输入")
             except ValueError:
-                print("请输入有效的数字")
+                print("请输入有效的邮箱")
+
+
+        # 提示用户选择操作模式
+        # print("\n请选择操作模式:")
+        # print("1. 仅重置机器码")
+        # print("2. 完整注册流程")
+
+        # 选择操作模式，用户数输入识别
+        # while True:
+        #     try:
+        #         # choice = int(input("请输入选项 (1 或 2): ").strip())
+        #         choice = int(input("请输入选项 (1): ").strip())
+        #         if choice in [1, 2]:
+        #             break
+        #         else:
+        #             print("无效的选项,请重新输入")
+        #     except ValueError:
+        #         print("请输入有效的数字")
+
+        
+        choice = 1
 
         if choice == 1:
             # 仅执行重置机器码
@@ -447,9 +467,9 @@ if __name__ == "__main__":
         # 获取并打印浏览器的user-agent
         user_agent = browser.latest_tab.run_js("return navigator.userAgent")
 
-        logging.info(
-            "请前往开源项目查看更多信息：https://github.com/chengazhen/cursor-auto-free"
-        )
+        # logging.info(
+        #     "请前往开源项目查看更多信息：https://github.com/chengazhen/cursor-auto-free"
+        # )
         logging.info("\n=== 配置信息 ===")
         login_url = "https://authenticator.cursor.sh"
         sign_up_url = "https://authenticator.cursor.sh/sign-up"
@@ -487,9 +507,9 @@ if __name__ == "__main__":
                 update_cursor_auth(
                     email=account, access_token=token, refresh_token=token
                 )
-                logging.info(
-                    "请前往开源项目查看更多信息：https://github.com/chengazhen/cursor-auto-free"
-                )
+                # logging.info(
+                #     "请前往开源项目查看更多信息：https://github.com/chengazhen/cursor-auto-free"
+                # )
                 logging.info("重置机器码...")
                 reset_machine_id(greater_than_0_45)
                 logging.info("所有操作已完成")
